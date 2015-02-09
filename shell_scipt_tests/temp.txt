@@ -1,0 +1,3 @@
+Reading from keyboard
+---------------------------
+Use arrow keys to move the turtle.

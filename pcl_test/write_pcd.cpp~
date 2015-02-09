@@ -1,0 +1,23 @@
+#i n c l u d e <p c l / i o / p c d i o . h>
+#i n c l u d e <p c l / p o i n t t y p e s . h>
+int
+main ( i n t a r g c , c h a r ∗∗ a r g v )
+{
+p c l : : P o i n t C l o u d<p c l : : PointXYZ> c l o u d ;
+// F i l l i n t h e c l o u d d a t a
+cloud . width
+= 50;
+cloud . height
+= 1;
+cloud . is dense = f a l s e ;
+cloud . p o i n t s . r e s i z e ( cloud . width ∗ cloud . height ) ;
+f o r ( s i z e t i = 0 ; i < c l o u d . p o i n t s . s i z e ( ) ; ++i )
+{
+c l o u d . p o i n t s [ i ] . x = 1024 ∗ r a n d ( ) / (RAND MAX + 1 . 0 f ) ;
+c l o u d . p o i n t s [ i ] . y = 1024 ∗ r a n d ( ) / (RAND MAX + 1 . 0 f ) ;
+c l o u d . p o i n t s [ i ] . z = 1024 ∗ r a n d ( ) / (RAND MAX + 1 . 0 f ) ;
+}
+p c l : : i o : : s a v e P C D F i l e A S C I I ( ” t e s t p c d . pcd ” , c l o u d ) ;
+return (0);
+}
+

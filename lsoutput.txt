@@ -1,0 +1,19 @@
+3.jpg
+catkin_ws
+desktop
+documents
+downloads
+Dropbox
+lsoutput.txt
+Music
+opencv
+pictures
+Public
+python_cut.py
+python_ros_test.py
+things to check out from WEEK 7
+tty.py
+videos
+workspace
+x220_w520.jpg
+xcode

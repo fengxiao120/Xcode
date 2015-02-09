@@ -1,3 +1,0 @@
-Continuing in background, pid 3023.
-Output will be written to `wget-log'.
-still working ^-^

@@ -1,0 +1,28 @@
+   1 #include <message_filters/subscriber.h>
+   2 #include <message_filters/time_synchronizer.h>
+   3 #include <sensor_msgs/Image.h>
+   4 #include <sensor_msgs/CameraInfo.h>
+   5 
+   6 using namespace sensor_msgs;
+   7 using namespace message_filters;
+   8 
+   9 void callback(const ImageConstPtr& image, const CameraInfoConstPtr& cam_info)
+  10 {
+  11   // Solve all of perception here...
+  12 }
+  13 
+  14 int main(int argc, char** argv)
+  15 {
+  16   ros::init(argc, argv, "vision_node");
+  17 
+  18   ros::NodeHandle nh;
+  19 
+  20   message_filters::Subscriber<Image> image_sub(nh, "image", 1);
+  21   message_filters::Subscriber<CameraInfo> info_sub(nh, "camera_info", 1);
+  22   TimeSynchronizer<Image, CameraInfo> sync(image_sub, info_sub, 10);
+  23   sync.registerCallback(boost::bind(&callback, _1, _2));
+  24 
+  25   ros::spin();
+  26 
+  27   return 0;
+  28 }
